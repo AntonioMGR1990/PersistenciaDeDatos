@@ -1,21 +1,24 @@
 package com.example.usuario.persistencia;
 
+import java.io.Serializable;
+
 /**
  * Created by Usuario on 27/03/2018.
  */
 
-public class Persona {
+public class Persona implements Serializable{
 
     private String nombre;
-    private String Apellido;
+    private String apellido;
     private int edad;
+    private static final Long serialVersionUID = 1L;
 
     public Persona() {
     }
 
     public Persona(String nombre, String apellido, int edad) {
         this.nombre = nombre;
-        Apellido = apellido;
+        this.apellido = apellido;
         this.edad = edad;
     }
 
@@ -28,11 +31,11 @@ public class Persona {
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
     public void setApellido(String apellido) {
-        Apellido = apellido;
+        this.apellido = apellido;
     }
 
     public int getEdad() {
@@ -52,13 +55,13 @@ public class Persona {
 
         if (edad != persona.edad) return false;
         if (nombre != null ? !nombre.equals(persona.nombre) : persona.nombre != null) return false;
-        return Apellido != null ? Apellido.equals(persona.Apellido) : persona.Apellido == null;
+        return apellido != null ? apellido.equals(persona.apellido) : persona.apellido == null;
     }
 
     @Override
     public int hashCode() {
         int result = nombre != null ? nombre.hashCode() : 0;
-        result = 31 * result + (Apellido != null ? Apellido.hashCode() : 0);
+        result = 31 * result + (apellido != null ? apellido.hashCode() : 0);
         result = 31 * result + edad;
         return result;
     }
@@ -67,7 +70,7 @@ public class Persona {
     public String toString() {
         return "Persona{" +
                 "nombre='" + nombre + '\'' +
-                ", Apellido='" + Apellido + '\'' +
+                ", apellido='" + apellido + '\'' +
                 ", edad=" + edad +
                 '}';
     }

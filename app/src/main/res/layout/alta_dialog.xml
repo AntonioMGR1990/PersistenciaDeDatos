@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="@+id/Aceptar" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/NombreEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
@@ -47,8 +47,8 @@
         android:ems="10"
         android:hint="Apellido"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toStartOf="@+id/NombreEditText"
+        app:layout_constraintTop_toBottomOf="@+id/NombreEditText" />
 
     <TextView
         android:id="@+id/textView"

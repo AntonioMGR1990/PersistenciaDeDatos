@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Persistencia.iml" filepath="$PROJECT_DIR$/Persistencia.iml" />
+      <module fileurl="file://C:\Users\anton\AndroidStudioProjects\PersistenciaDeDatos\Persistencia.iml" filepath="C:\Users\anton\AndroidStudioProjects\PersistenciaDeDatos\Persistencia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PersistenciaDeDatos.iml" filepath="$PROJECT_DIR$/PersistenciaDeDatos.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\anton\AndroidStudioProjects\PersistenciaDeDatos\app\app.iml" filepath="C:\Users\anton\AndroidStudioProjects\PersistenciaDeDatos\app\app.iml" />
     </modules>
   </component>
 </project>
