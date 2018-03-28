@@ -1,10 +1,9 @@
 package com.example.usuario.persistencia;
 
-import java.io.Serializable;
+
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
+
 
 /**
  * Created by Usuario on 27/03/2018.
@@ -30,23 +29,4 @@ class PersonasSingleton{
         this.personas = personas;
     }
 
-    public int size() {
-        return personas.size();
-    }
-
-    public boolean contains(Object o) {
-        return personas.contains(o);
-    }
-
-    public boolean add(Persona persona) {
-        return personas.add(persona);
-    }
-
-    public boolean remove(Object o) {
-        return personas.remove(o);
-    }
-
-    public Persona get(int i) {
-        return personas.get(i);
-    }
 }

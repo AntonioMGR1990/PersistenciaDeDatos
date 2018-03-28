@@ -1,11 +1,13 @@
 package com.example.usuario.persistencia;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDialog;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -15,28 +17,23 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    private EditText nombre;
-    private EditText apellido;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        nombre = findViewById(R.id.NombreEditText);
-        apellido = findViewById(R.id.ApellidoEditText);
+        final XXX dialogAltas = new XXX(MainActivity.this,R.layout.alta_dialog);
+        dialogAltas.setCancelable(false);
         findViewById(R.id.Altas).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Dialog dialogAltas = new Dialog(MainActivity.this);
-                nombre = findViewById(R.id.NombreEditText);
-                apellido = findViewById(R.id.ApellidoEditText);
 
-                dialogAltas.setContentView(R.layout.alta_dialog);
-                dialogAltas.setCancelable(false);
                 dialogAltas.findViewById(R.id.Aceptar).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String nombre1 = "antonio";
-                        String apellido1 = "garcia";
+
+                        String nombre1 = dialogAltas.getNombre().getText().toString();
+                        String apellido1 = dialogAltas.getApellido().getText().toString();
                         PersonasSingleton.getInstance().getPersonas().add(new Persona(nombre1,apellido1,20));
                         dialogAltas.dismiss();
                     }
@@ -58,26 +55,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+}
+
+class XXX extends Dialog{
+    private EditText nombre;
+    private EditText apellido;
+
+    public EditText getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(EditText nombre) {
+        this.nombre = nombre;
+    }
+
+    public EditText getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(EditText apellido) {
+        this.apellido = apellido;
+    }
+
+    private XXX(@NonNull Activity context) {
+        super(context);
 
 
-    static class DialogPersonalizado extends Dialog{
-
-        private Button aceptar = findViewById(R.id.Aceptar);
-        private Button cancelar = findViewById(R.id.Cancel);
-
-        public DialogPersonalizado(@NonNull Context context) {
-            super(context);
-        }
-
-        @Override
-        public void setContentView(int layoutResID) {
-            this.setContentView(R.layout.alta_dialog);
-        }
-
-        @Override
-        public void setCancelable(boolean flag) {
-            this.setCancelable(false);
-        }
-
+    }
+    public XXX(@NonNull Activity context,int id) {
+        super(context);
+        setContentView(id);
+        nombre = findViewById(R.id.NombreEditText);
+        apellido = findViewById(R.id.ApellidoEditText);
     }
 }
